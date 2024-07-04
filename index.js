@@ -10,9 +10,6 @@ const MongoStore = require('connect-mongo');
 const bodyParser = require('body-parser');
 const modelsRouter = require('./routes/modelsRouter');
 const distritoRouter = require('./routes/distritoRouter');
-
-
-
 const { connectDB } = require('./database');
 
 // Intializations
@@ -75,7 +72,7 @@ const startServer = async () => {
 
     // Public
     app.use(express.static(path.join(__dirname, 'public')));
-	
+    
 
     // Starting
     app.listen(app.get('port'), () => {
@@ -86,4 +83,6 @@ const startServer = async () => {
   }
 };
 
-startServer();
+module.exports = {
+  startServer
+};
