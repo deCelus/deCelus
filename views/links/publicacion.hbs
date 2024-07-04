@@ -1,0 +1,50 @@
+<div class="container p-4">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <div class="card">
+        <div class="card-body">
+          <h2>{{link.marca}} {{link.modelo}} {{link.almacenamiento}}GB/{{link.ram}}GB</h2>
+          <div class="slider">
+            {{#each link.imageLinks}}
+            <div>
+              <img src="{{this}}" class="img-fluid" alt="Imagen del celular">
+            </div>
+            {{/each}}
+          </div>
+          <p><strong>Ubicación:</strong> {{link.departamento}} - {{link.distrito}}</p>
+          <p><strong>Precio:</strong> {{link.precio}}</p>
+          <p><strong>Condición:</strong> {{link.condicion}}</p>
+          <p><strong>Detalles:</strong><span id="deta"> {{link.detalles}}</span></p>
+          <p><strong>Descripción:</strong> {{link.descripcion}}</p>
+          <p><strong>telefono:</strong>{{link.telefono}}</p>
+          <p><strong>email:</strong>{{link.email}}</p>
+          <p><strong>vendedor:</strong>{{link.vendedor}}</p>
+
+
+          <a class="btn btn-secondary" href="/links/edit/{{link._id}}">Editar</a>
+          <a class="btn btn-danger" href="/links/delete/{{link._id}}">Eliminar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    if (typeof jQuery !== "undefined") {
+      $('.slider').slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        adaptiveHeight: true
+      });
+    } else {
+      console.error("jQuery no está definido");
+    }
+  });
+
+  if (document.getElementById("deta").innerHTML == " ") {
+    document.getElementById("deta").textContent = " Ninguno"
+  }  
+ 
+</script>

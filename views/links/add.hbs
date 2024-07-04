@@ -1,0 +1,299 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/links/add" method="POST" id="formularioVenta" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="departamento">Ubicación</label>
+                            <select name="departamento" id="departamento" class="form-control">
+                                <option value="">Selecciona el departamento</option>
+                                <option value="Capital">Mendoza capital</option>
+                                <option value="GodoyCruz">Godoy Cruz</option>
+                                <option value="Guaymallen">Guaymallén</option>
+                                <option value="Junin">Junín</option>
+                                <option value="LaPaz">La Paz</option>
+                                <option value="LasHeras">Las Heras</option>
+                                <option value="Lavalle">Lavalle</option>
+                                <option value="LujanDeCuyo">Luján de Cuyo</option>
+                                <option value="Maipu">Maipú</option>
+                                <option value="Malargue">Malargüe</option>
+                                <option value="Rivadavia">Rivadavia</option>
+                                <option value="SanCarlos">San Carlos</option>
+                                <option value="SanMartin">San Martín</option>
+                                <option value="SanRafael">San Rafael</option>
+                                <option value="SantaRosa">Santa Rosa</option>
+                                <option value="Tunuyan">Tunuyán</option>
+                                <option value="Tupungato">Tupungato</option>
+
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select name="distrito" id="distrito" class="form-control">
+                                <option value="">Selecciona el distrito</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="marca">Marca</label>
+                            <select name="marca" id="marca" class="form-control">
+                                <option value="">Selecciona una marca</option>
+                                <option value="Samsung">Samsung</option>
+                                <option value="iPhone">iPhone</option>
+                                <option value="Motorola">Motorola</option>
+                                <option value="Huawei">Huawei</option>
+                                <option value="Xiaomi">Xiaomi</option>
+                                <option value="Sony">Sony</option>
+                                <option value="LG">LG</option>
+                                <option value="Nokia">Nokia</option>
+                                <option value="Honor">Honor</option>
+                                <option value="OnePlus">OnePlus</option>
+                                <option value="Google Pixel">Google Pixel</option>
+                                <option value="ASUS">ASUS</option>
+                                <option value="HTC">HTC</option>
+                                <option value="BlackBerry">BlackBerry</option>
+                                <option value="ZTE">ZTE</option>
+                                <option value="Alcatel">Alcatel</option>
+                                <option value="Realme">Realme</option>
+                                <option value="Lenovo">Lenovo</option>
+                                <option value="OPPO">OPPO</option>
+                                <option value="Vivo">Vivo</option>
+                                <option value="Meizu">Meizu</option>
+                                <option value="Infinix">Infinix</option>
+                                <option value="TCL">TCL</option>
+                                <option value="Sharp">Sharp</option>
+                                <option value="Panasonic">Panasonic</option>
+                                <option value="LeEco">LeEco</option>
+                                <option value="Energizer">Energizer</option>
+                                <option value="Razer">Razer</option>
+                                <option value="Cat">Cat</option>
+                                <option value="Fairphone">Fairphone</option>
+                                <option value="Essential">Essential</option>
+                                <option value="Blackview">Blackview</option>
+                                <option value="Ulefone">Ulefone</option>
+                                <option value="Wiko">Wiko</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="modelo">Modelo</label>
+                            <select name="modelo" id="modelo" class="form-control">
+                                <option value="">Selecciona un modelo</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="almacenamiento">Memoria de Almacenamiento</label>
+                            <select name="almacenamiento" id="almacenamiento" class="form-control">
+                                <option value="">Selecciona la memoria de almacenamiento</option>
+                                <option value="8">8 GB</option>
+                                <option value="16">16 GB</option>
+                                <option value="32">32 GB</option>
+                                <option value="64">64 GB</option>
+                                <option value="128">128 GB</option>
+                                <option value="256">256 GB</option>
+                                <option value="512">512 GB</option>
+                                <option value="1024">1 TB</option>
+                                <option value="2048">2 TB</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="ram">Memoria RAM</label>
+                            <select name="ram" id="ram" class="form-control">
+                                <option value="">Selecciona la memoria RAM</option>
+                                <option value="1">1 GB</option>
+                                <option value="2">2 GB</option>
+                                <option value="3">3 GB</option>
+                                <option value="4">4 GB</option>
+                                <option value="6">6 GB</option>
+                                <option value="8">8 GB</option>
+                                <option value="12">12 GB</option>
+                                <option value="16">16 GB</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="condicion">Condición</label>
+                            <select name="condicion" id="condicion" class="form-control">
+                                <option value="usado como nuevo">Usado como nuevo</option>
+                                <option value="nuevo en caja">Nuevo en caja</option>
+                                <option value="usado con detalles">Usado con detalles</option>
+                            </select>
+                        </div>
+                        <div class="form-group" id="detalles" style="display: none;">
+                            <label for="detalles">Detalles</label>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="trizado" name="detalles"
+                                    value="pantalla trizada">
+                                <label class="form-check-label" for="trizado">Pantalla trizada</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="bandaNegativa" name="detalles"
+                                    value="banda negativa">
+                                <label class="form-check-label" for="bandaNegativa">Banda negativa</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="icloud" name="detalles"
+                                    value="cuenta de iCloud">
+                                <label class="form-check-label" for="icloud">Cuenta de iCloud</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="senial" name="detalles"
+                                    value="problemas de señal">
+                                <label class="form-check-label" for="senial">Problemas de señal</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="software" name="detalles"
+                                    value="problemas de software">
+                                <label class="form-check-label" for="software">Problemas de software</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="huella" name="detalles"
+                                    value="problema en lector de huella">
+                                <label class="form-check-label" for="huella">Problema en lector de huella</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="parlantes" name="detalles"
+                                    value="problema en parlantes">
+                                <label class="form-check-label" for="parlantes">Problema en parlantes</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="microfonos" name="detalles"
+                                    value="problema en microfonos">
+                                <label class="form-check-label" for="microfonos">Problema en micrófonos</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="camaras" name="detalles"
+                                    value="problema en camaras">
+                                <label class="form-check-label" for="camaras">Problema en cámaras</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="descripcion">Descripción</label>
+                            <textarea name="descripcion" id="descripcion" rows="3" class="form-control"
+                                placeholder="Descripción"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="precio">Precio</label>
+                            <input type="number" name="precio" id="precio" class="form-control" placeholder="Precio">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fotos">Fotos</label>
+                            <input type="file" name="fotos" id="fotos" class="form-control-file" multiple
+                                accept="image/*">
+                            <small id="fotosHelp" class="form-text text-muted">Sube hasta 4 fotos del celular.</small>
+                            <div id="fotosError" class="text-danger" style="display: none;">Puedes subir un máximo de 4
+                                imágenes.</div>
+                        </div>
+
+                        <textarea name="telefono" id="telefono" rows="1" class="form-control"
+                            placeholder="telefono">{{user.telefono}}</textarea>
+                        <textarea name="email" id="email" rows="3" class="form-control"
+                            placeholder="email">{{user.email}}</textarea>
+                        <textarea name="vendedor" id="vendedor" rows="3" class="form-control"
+                            placeholder="vendedor">{{user.nombre}} {{user.apellido}}</textarea> 
+
+                        <button type="submit" class="btn btn-success btn-block">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+
+        $('#condicion').change(function () {
+            if ($(this).val() === 'usado con detalles') {
+                $('#detalles').show();
+            } else {
+                $('#detalles').hide();
+            }
+        });
+
+        $('#marca').change(function () {
+            var marca = $(this).val();
+            $('#modelo').empty();
+            if (marca !== '') {
+                $.ajax({
+                    url: '/api/modelos/' + marca, // Ruta en tu backend para obtener los modelos por marca
+                    type: 'GET',
+                    success: function (data) {
+                        data.forEach(function (modelo) {
+                            $('#modelo').append('<option value="' + modelo + '">' + modelo + '</option>');
+                        });
+                    },
+                    error: function (err) {
+                        console.error('Error al cargar modelos:', err);
+                    }
+                });
+            }
+        });
+
+        $('#departamento').change(function () {
+            var departamento = $(this).val();
+            $('#distrito').empty();
+            if (departamento !== '') {
+                $.ajax({
+                    url: '/api/distritos/' + departamento,
+                    type: 'GET',
+                    success: function (data) {
+                        data.forEach(function (distrito) {
+                            $('#distrito').append('<option value="' + distrito + '">' + distrito + '</option>');
+                        });
+                    },
+                    error: function (err) {
+                        console.error('Error al cargar distritos:', err);
+                    }
+                });
+            }
+        });
+
+        // Función para validar la cantidad de imágenes seleccionadas
+        $('#fotos').change(function () {
+            var files = $(this)[0].files;
+            if (files.length > 4) {
+                $('#fotosError').show();
+                $(this).val('');
+            } else {
+                $('#fotosError').hide();
+            }
+        });
+
+        // Capturar el envío del formulario y subir las imágenes
+        $('#formularioVenta').submit(function (event) {
+            event.preventDefault();
+            uploadImages();
+        });
+
+        // Función para subir las imágenes a ImgBB
+        function uploadImages() {
+            const form = document.getElementById('formularioVenta');
+            const formData = new FormData(form);
+            const images = document.getElementById('fotos').files;
+
+            for (let i = 0; i < images.length; i++) {
+                formData.append('images', images[i]);
+            }
+
+            fetch('http://localhost:3000/links/upload', {
+                method: 'POST',
+                body: formData,
+            })
+                .then(response => response.text())
+                .then(data => {
+                    console.log('Respuesta del servidor:', data);
+                    form.submit(); // Envía el formulario después de subir las imágenes
+                })
+                .catch(error => {
+                    console.error('Error al subir las imágenes:', error);
+                });
+        }
+    });
+</script>

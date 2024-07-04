@@ -1,0 +1,47 @@
+<div class="col-md-4 mx-auto">
+    <div class="card">
+        <div class="card-body">
+            <form action="/links/edit/{{link._id}}" method="POST">
+                <div class="form-group">
+                    <label for="departamento">Ubicación: {{link.departamento}} - {{link.distrito}}</label>
+                    <input type="text" id="departamento" name="departamento" class="form-control"
+                        value="{{link.departamento}}">
+                    <input type="text" id="distrito" name="distrito" class="form-control" value="{{link.distrito}}">
+                </div>
+                <div class="form-group">
+                    <label for="marca">Marca: {{link.marca}} - {{link.modelo}} -
+                        {{link.almacenamiento}}GB/{{link.ram}}GB</label>
+                    <input type="text" id="marca" name="marca" class="form-control" value="{{link.marca}}">
+                    <input type="text" id="modelo" name="modelo" class="form-control" value="{{link.modelo}}">
+                    <input type="text" id="almacenamiento" name="almacenamiento" class="form-control"
+                        value="{{link.almacenamiento}}">
+                    <input type="text" id="ram" name="ram" class="form-control" value="{{link.ram}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="marca">Condicion: {{link.condicion}} - {{link.detalles}}</label>
+                    <input type="text" id="condicion" name="condicion" class="form-control" value="{{link.condicion}}">
+                    <input type="text" id="detalles" name="detalles" class="form-control" value="{{link.detalles}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="descripcion">Descripción</label>
+                    <textarea id="descripcion" name="descripcion" rows="2"
+                        class="form-control">{{link.descripcion}}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="precio">Precio</label>
+                    <input type="number" id="precio" name="precio" class="form-control" value="{{link.precio}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="vendedor">vendedor</label>
+                    <textarea id="vendedor" name="vendedor" rows="2" class="form-control">{{link.vendedor}}</textarea>
+                    <textarea id="telefono" name="telefono" rows="2" class="form-control">{{link.telefono}}</textarea>
+                    <textarea id="email" name="email" rows="2" class="form-control">{{link.email}}</textarea>
+                </div>
+                <button type="submit" class="btn btn-success btn-block">Guardar</button>
+            </form>
+        </div>
+    </div>
+</div>

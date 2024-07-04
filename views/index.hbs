@@ -1,0 +1,260 @@
+<main class="index">
+
+    <div class="container">
+        <label for="departamento">Ubicación</label>
+        <select name="departamento" id="departamento" class="form-control">
+            <option value="Cualquier departamento">Cualquier departamento</option>
+            <option value="Capital">Mendoza capital</option>
+            <option value="GodoyCruz">Godoy Cruz</option>
+            <option value="Guaymallen">Guaymallén</option>
+            <option value="Junin">Junín</option>
+            <option value="LaPaz">La Paz</option>
+            <option value="LasHeras">Las Heras</option>
+            <option value="Lavalle">Lavalle</option>
+            <option value="LujanDeCuyo">Luján de Cuyo</option>
+            <option value="Maipu">Maipú</option>
+            <option value="Malargue">Malargüe</option>
+            <option value="Rivadavia">Rivadavia</option>
+            <option value="SanCarlos">San Carlos</option>
+            <option value="SanMartin">San Martín</option>
+            <option value="SanRafael">San Rafael</option>
+            <option value="SantaRosa">Santa Rosa</option>
+            <option value="Tunuyan">Tunuyán</option>
+            <option value="Tupungato">Tupungato</option>
+        </select>
+
+        <select name="distrito" id="distrito" class="form-control">
+            <option value="Cualquier distrito">Cualquier distrito</option>
+        </select>
+
+        <select name="marca" id="marca" class="form-control">
+            <option value="Cualquier marca">Cualquier marca</option>
+            <option value="Samsung">Samsung</option>
+            <option value="iPhone">iPhone</option>
+            <option value="Motorola">Motorola</option>
+            <option value="Huawei">Huawei</option>
+            <option value="Xiaomi">Xiaomi</option>
+            <option value="Sony">Sony</option>
+            <option value="LG">LG</option>
+            <option value="Nokia">Nokia</option>
+            <option value="Honor">Honor</option>
+            <option value="OnePlus">OnePlus</option>
+            <option value="Google Pixel">Google Pixel</option>
+            <option value="ASUS">ASUS</option>
+            <option value="HTC">HTC</option>
+            <option value="BlackBerry">BlackBerry</option>
+            <option value="ZTE">ZTE</option>
+            <option value="Alcatel">Alcatel</option>
+            <option value="Realme">Realme</option>
+            <option value="Lenovo">Lenovo</option>
+            <option value="OPPO">OPPO</option>
+            <option value="Vivo">Vivo</option>
+            <option value="Meizu">Meizu</option>
+            <option value="Infinix">Infinix</option>
+            <option value="TCL">TCL</option>
+            <option value="Sharp">Sharp</option>
+            <option value="Panasonic">Panasonic</option>
+            <option value="LeEco">LeEco</option>
+            <option value="Energizer">Energizer</option>
+            <option value="Razer">Razer</option>
+            <option value="Cat">Cat</option>
+            <option value="Fairphone">Fairphone</option>
+            <option value="Essential">Essential</option>
+            <option value="Blackview">Blackview</option>
+            <option value="Ulefone">Ulefone</option>
+            <option value="Wiko">Wiko</option>
+        </select>
+
+        <select name="modelo" id="modelo" class="form-control">
+            <option value="Cualquier modelo">Cualquier modelo</option>
+        </select>
+
+        <label for="almacenamiento">Memoria de Almacenamiento</label>
+        <select name="almacenamiento" id="almacenamiento" class="form-control">
+            <option value="Cualquier almacenamiento">Cualquier almacenamiento</option>
+            <option value="8">8 GB</option>
+            <option value="16">16 GB</option>
+            <option value="32">32 GB</option>
+            <option value="64">64 GB</option>
+            <option value="128">128 GB</option>
+            <option value="256">256 GB</option>
+            <option value="512">512 GB</option>
+            <option value="1024">1 TB</option>
+            <option value="2048">2 TB</option>
+        </select>
+
+
+        <label for="ram">Memoria RAM</label>
+        <select name="ram" id="ram" class="form-control">
+            <option value="Cualquier RAM">Cualquier RAM</option>
+            <option value="1">1 GB</option>
+            <option value="2">2 GB</option>
+            <option value="3">3 GB</option>
+            <option value="4">4 GB</option>
+            <option value="6">6 GB</option>
+            <option value="8">8 GB</option>
+            <option value="12">12 GB</option>
+            <option value="16">16 GB</option>
+        </select>
+
+
+        <label for="condicion">Condición</label>
+        <select name="condicion" id="condicion" class="form-control">
+            <option value="Cualquier condición">Cualquier condición</option>
+            <option value="usado como nuevo">Usado como nuevo</option>
+            <option value="nuevo en caja">Nuevo en caja</option>
+            <option value="usado con detalles">Usado con detalles</option>
+        </select>
+
+        <label for="precio">Selecciona el precio:</label>
+        <input type="range" id="precio" name="precio" min="0" max="3000000" step="50000" value="0" class="slider">
+        <br>
+        <output for="precio">0</output>
+
+
+    </div>
+
+    <div id="publicaciones" class="container mt-5">
+        <div class="row">
+            {{#each publications}}
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img class="card-img-top" src="{{getFirstImage this.imageLinks}}"
+                        alt="{{this.marca}} {{this.modelo}}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.marca}} {{this.modelo}}</h5>
+                        <p class="card-text">{{this.descripcion}}</p>
+                        <p class="card-text"><strong>Precio: </strong>{{this.precio}}</p>
+                        <a href="/links/{{this._id}}" class="btn btn-primary">Ver detalles</a>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                {{#if hasPrevPage}}
+                <li class="page-item">
+                    <a class="page-link" href="/?page={{prevPage}}">Anterior</a>
+                </li>
+                {{/if}}
+                {{#each pages}}
+                <li class="page-item {{#if active}}active{{/if}}">
+                    <a class="page-link" href="/?page={{this.number}}">{{this.number}}</a>
+                </li>
+                {{/each}}
+                {{#if hasNextPage}}
+                <li class="page-item">
+                    <a class="page-link" href="/?page={{nextPage}}">Siguiente</a>
+                </li>
+                {{/if}}
+            </ul>
+        </nav>
+    </div>
+
+</main>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Manejar el cambio en el selector de marca para cargar modelos
+        $('#marca').change(function () {
+            var marca = $(this).val();
+            $('#modelo').empty();
+            $('#modelo').append('<option value="Cualquier modelo">Cualquier modelo</option>');
+            if (marca !== '') {
+                $.ajax({
+                    url: `/api/modelos/${marca}`, // Ajustar la URL según tu ruta en Express
+                    type: 'GET',
+                    success: function (data) {
+                        data.forEach(function (modelo) {
+                            $('#modelo').append(`<option value="${modelo}">${modelo}</option>`);
+                        });
+                    },
+                    error: function (err) {
+                        console.error('Error al cargar modelos:', err);
+                    }
+                });
+            }
+        });
+
+        // Manejar el cambio en cualquier selector de filtro
+        const selectores = ['departamento', 'distrito', 'marca', 'modelo', 'ram', 'almacenamiento', 'condicion', 'precio'];
+
+        // Escuchar cambios en cualquier selector de filtro
+        selectores.forEach(selector => {
+            const elemento = document.getElementById(selector);
+
+            elemento.addEventListener('change', async () => {
+                const filtros = obtenerFiltros(); // Obtener filtros seleccionados
+                const resultados = await obtenerResultados(filtros);
+                mostrarResultados(resultados); // Mostrar resultados en la página
+            });
+        });
+
+        async function obtenerResultados(filtros) {
+            try {
+                const url = `/filtros?${new URLSearchParams(filtros).toString()}`;
+                const response = await fetch(url);
+
+                if (!response.ok) {
+                    throw new Error('Error al obtener resultados');
+                }
+
+                return await response.json(); // Devolver resultados como JSON
+            } catch (error) {
+                console.error('Error al obtener resultados:', error);
+                return []; // Devolver un array vacío en caso de error
+            }
+        }
+
+function mostrarResultados(resultados) {
+    const container = document.getElementById('publicaciones');
+    container.innerHTML = ''; // Limpiar resultados anteriores
+
+    // Verificar si hay resultados de publicaciones
+    if (!resultados.publications || resultados.publications.length === 0) {
+        container.innerHTML = '<p>No hay publicaciones que coincidan con los filtros seleccionados.</p>';
+        return;
+    }
+
+    // Iterar sobre las publicaciones y construir los elementos HTML
+    resultados.publications.forEach(publicacion => {
+        
+        const primeraImagen = publicacion.imageLinks[0];
+        const card = `
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img class="card-img-top" src="${primeraImagen}" alt="${publicacion.marca} ${publicacion.modelo}">
+                    <div class="card-body">
+                        <h5 class="card-title">${publicacion.marca} ${publicacion.modelo}</h5>
+                        <p class="card-text">${publicacion.descripcion}</p>
+                        <p class="card-text"><strong>Precio: </strong>${publicacion.precio}</p>
+                        <a href="/links/${publicacion._id}" class="btn btn-primary">Ver detalles</a>
+                    </div>
+                </div>
+            </div>
+        `;
+        container.innerHTML += card;
+    });
+}
+
+
+
+        function obtenerFiltros() {
+            const filtros = {};
+
+            filtros.departamento = document.getElementById('departamento').value;
+            filtros.distrito = document.getElementById('distrito').value;
+            filtros.marca = document.getElementById('marca').value;
+            filtros.modelo = document.getElementById('modelo').value;
+            filtros.ram = document.getElementById('ram').value;
+            filtros.almacenamiento = document.getElementById('almacenamiento').value;
+            filtros.condicion = document.getElementById('condicion').value;
+            filtros.precio = document.getElementById('precio').value; 
+            return filtros;
+        }
+    });
+</script>
